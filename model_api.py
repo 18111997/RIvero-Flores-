@@ -208,7 +208,8 @@ class PredictionAPI(Resource):
     @ns.doc({'prediction_id': 'Identificador de la predicción'})
     @ns.expect(classified_observation)
     def put(self, prediction_id):
-        """ Este método maneja la actualización de una observación con la clase que
+        """ Metodo PUT
+		    Este método maneja la actualización de una observación con la clase que
             tiene en la realidad.
         """
         return _update_observation(prediction_id)
@@ -216,7 +217,8 @@ class PredictionAPI(Resource):
     @ns.doc({'prediction_id': 'Identificador de la predicción'})
     @ns.expect(classified_observation)
     def patch(self, prediction_id):
-        """ El metodo controla la actualizacion, la diferencia es el metodo, pende de la regla del HATEOAS
+        """Metodo PATCH 
+		   El metodo controla la actualizacion, la diferencia es el metodo, pende de la regla del HATEOAS
         y del desarrollador que integre o no la norma.
         """
         return self._update_observation(prediction_id)
